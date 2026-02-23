@@ -1,0 +1,71 @@
+import React from 'react'
+import { Challenge } from '../types'
+
+const categoryIcon: Record<Challenge['category'], string> = {
+  document: '📄',
+  video:    '🎥',
+  audio:    '🎙️',
+  image:    '🖼️',
+}
+
+const categoryLabel: Record<Challenge['category'], string> = {
+  document: 'Document',
+  video:    'Video',
+  audio:    'Audio',
+  image:    'Image',
+}
+
+interface Props {
+  challenge: Challenge
+}
+
+const ChallengeCard: React.FC<Props> = ({ challenge }) => {
+  const { category, content } = challenge
+
+  return (
+    <div className={`ccard ccard-${category}`}>
+      {/* ── Header ── */}
+      <div className="ccard-header">
+        <span className="ccard-icon">{categoryIcon[category]}</span>
+        <span className="ccard-type">{categoryLabel[category]} Evidence</span>
+        <span className={`ccard-sensitivity ccard-sensitivity-${category}`}>
+          {category === 'document' && 'Financial / Legal'}
+          {category === 'video'    && 'Visual Media'}
+          {category === 'audio'    && 'Audio Recording'}
+          {category === 'image'    && 'Visual Evidence'}
+        </span>
+      </div>
+
+      {/* ── Metadata fields ── */}
+      <div className="ccard-fields">
+        {content.fields.map((f) => (
+          <div className="ccard-field" key={f.label}>
+            <span className="ccard-field-label">{f.label}</span>
+            <span className="ccard-field-value">{f.value}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* ── Body content ── */}
+      {content.body && (
+        <div className="ccard-body">
+          <div className="ccard-body-label">
+            {category === 'document' && 'Document Content'}
+            {category === 'video'    && 'Video Frame Analysis'}
+            {category === 'audio'    && 'Audio Analysis'}
+            {category === 'image'    && 'Image Analysis'}
+          </div>
+          <pre className="ccard-body-text">{content.body}</pre>
+        </div>
+      )}
+
+      {/* ── Reminder ── */}
+      <div className="ccard-reminder">
+        <span className="ccard-reminder-icon">🔍</span>
+        Look for inconsistencies, technical artifacts, and contextual clues that reveal AI generation.
+      </div>
+    </div>
+  )
+}
+
+export default ChallengeCard

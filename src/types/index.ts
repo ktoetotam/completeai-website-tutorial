@@ -1,0 +1,36 @@
+export type Category = 'document' | 'video' | 'audio' | 'image'
+export type Difficulty = 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert'
+export type Confidence = 'very' | 'confident' | 'somewhat' | 'uncertain'
+
+export interface ChallengeContent {
+  /** Key-value pairs rendered as the mock document/media card */
+  fields: { label: string; value: string }[]
+  /** Body text shown inside the mock (e.g. email body, contract excerpt) */
+  body?: string
+}
+
+export interface Challenge {
+  id: number
+  title: string
+  category: Category
+  difficulty: Difficulty
+  expectedDetectionRate: number   // %
+  scenario: string
+  content: ChallengeContent
+  isAI: boolean
+  redFlags: string[]
+  realMarkers: string[]
+  feedbackCorrect: string
+  feedbackIncorrect: string
+  professionalTip: string
+}
+
+export interface Answer {
+  challengeId: number
+  userChoice: 'real' | 'ai'
+  correct: boolean
+  confidence: Confidence
+  redFlagsSelected: string[]
+}
+
+export type GameScreen = 'intro' | 'challenge' | 'feedback' | 'summary'

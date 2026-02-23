@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import GamePage from './pages/GamePage'
+import './game.css'
 
 // ── Data from interface-copy.md & challenge-examples.md ──────────────────────
 
@@ -97,7 +99,7 @@ const detectionSkills = [
 
 // ── Components ────────────────────────────────────────────────────────────────
 
-const Nav: React.FC = () => (
+const Nav: React.FC<{ onStart: () => void }> = ({ onStart }) => (
   <nav className="nav">
     <div className="nav-inner container">
       <a href="#" className="nav-logo">
@@ -108,13 +110,13 @@ const Nav: React.FC = () => (
         <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#categories">Challenges</a></li>
         <li><a href="#skills">Your Score</a></li>
-        <li><a href="#start" className="btn btn-sm">Start Challenge</a></li>
+        <li><button className="btn btn-sm" onClick={onStart}>Start Challenge</button></li>
       </ul>
     </div>
   </nav>
 )
 
-const Hero: React.FC = () => (
+const Hero: React.FC<{ onStart: () => void }> = ({ onStart }) => (
   <section className="hero" id="start">
     <div className="container hero-inner">
       <div className="hero-badge">10 Challenges · 4 Categories · Adaptive Difficulty</div>
@@ -127,7 +129,7 @@ const Hero: React.FC = () => (
         that could fool your business. Learn the red flags that matter.
       </p>
       <div className="hero-actions">
-        <a href="#how-it-works" className="btn btn-primary">Start Detection Challenge</a>
+        <button className="btn btn-primary" onClick={onStart}>Start Detection Challenge</button>
         <a href="#categories" className="btn btn-ghost">See Challenges</a>
       </div>
       <div className="hero-stats">
@@ -344,20 +346,28 @@ const Footer: React.FC = () => (
 
 // ── App ───────────────────────────────────────────────────────────────────────
 
-const App: React.FC = () => (
-  <>
-    <Nav />
-    <main>
-      <Hero />
-      <Problem />
-      <HowItWorks />
-      <Categories />
-      <DetectionSkills />
-      <SkillLevels />
-      <CTA />
-    </main>
-    <Footer />
-  </>
-)
+const App: React.FC = () => {
+  const [inGame, setInGame] = useState(false)
+
+  if (inGame) {
+    return <GamePage onHome={() => setInGame(false)} />
+  }
+
+  return (
+    <>
+      <Nav onStart={() => setInGame(true)} />
+      <main>
+        <Hero onStart={() => setInGame(true)} />
+        <Problem />
+        <HowItWorks />
+        <Categories />
+        <DetectionSkills />
+        <SkillLevels />
+        <CTA />
+      </main>
+      <Footer />
+    </>
+  )
+}
 
 export default App
