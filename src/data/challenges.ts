@@ -10,6 +10,7 @@ export const challenges: Challenge[] = [
     expectedDetectionRate: 80,
     scenario: 'You receive this invoice from a regular supplier via email requesting payment within 48 hours.',
     content: {
+      imageUrl: '/images/challenges/challenge-01-invoice-ai.jpg',
       fields: [
         { label: 'From',    value: 'TechSupply Solutions <billing@techsupply-solutions.com>' },
         { label: 'Invoice', value: 'INV-2024-001234' },
@@ -47,6 +48,7 @@ export const challenges: Challenge[] = [
     expectedDetectionRate: 65,
     scenario: 'Your CEO sends an urgent video message asking you to approve a wire transfer for a confidential acquisition before end of day.',
     content: {
+      imageUrl: '/images/challenges/challenge-02-video-ai.jpg',
       fields: [
         { label: 'Length',   value: '45 seconds' },
         { label: 'Quality',  value: 'HD 1080p, clear audio' },
@@ -85,6 +87,7 @@ export const challenges: Challenge[] = [
     expectedDetectionRate: 45,
     scenario: 'You receive a voicemail claiming to be from your bank\'s fraud department, requesting an urgent callback with account verification details.',
     content: {
+      imageUrl: '/images/challenges/challenge-03-audio-ai.jpg',
       fields: [
         { label: 'Duration',  value: '30 seconds' },
         { label: 'Quality',   value: 'Phone-quality audio with background office noise' },
@@ -123,6 +126,7 @@ export const challenges: Challenge[] = [
     expectedDetectionRate: 40,
     scenario: 'A long-term client sends a 3-page contract amendment to adjust pricing structure before the next quarter.',
     content: {
+      imageUrl: '/images/challenges/challenge-04-contract-real.jpg',
       fields: [
         { label: 'Type',       value: 'Service Agreement Amendment — Schedule B Revision' },
         { label: 'Client',     value: 'Meridian Consulting Group LLC' },
@@ -161,6 +165,7 @@ export const challenges: Challenge[] = [
     expectedDetectionRate: 60,
     scenario: 'A new supplier sends high-resolution product photos of electronic components for quality verification before you approve a $45,000 shipment.',
     content: {
+      imageUrl: '/images/challenges/challenge-05-product-ai.jpg',
       fields: [
         { label: 'Type',       value: 'Product photography — PCB assemblies' },
         { label: 'Resolution', value: '8.2MP, 4928×3264px, professional studio setup' },
@@ -199,6 +204,7 @@ export const challenges: Challenge[] = [
     expectedDetectionRate: 75,
     scenario: 'You receive an email from the HR Director requiring immediate acknowledgment of a new security policy update.',
     content: {
+      imageUrl: '/images/challenges/challenge-06-email-ai.jpg',
       fields: [
         { label: 'From',    value: 'hr-director@company-hr-portal.net' },
         { label: 'Subject', value: 'URGENT: New Security Policy Implementation — Action Required' },
@@ -238,6 +244,7 @@ export const challenges: Challenge[] = [
     expectedDetectionRate: 50,
     scenario: 'A recording of last week\'s board meeting discussing merger terms is shared with you for review before the minutes are finalised.',
     content: {
+      imageUrl: '/images/challenges/challenge-07-meeting-real.jpg',
       fields: [
         { label: 'Duration',  value: '2 minutes 14 seconds (excerpt)' },
         { label: 'Speakers',  value: '4 participants — CFO, CEO, Legal Counsel, Board Chair' },
@@ -276,6 +283,7 @@ export const challenges: Challenge[] = [
     expectedDetectionRate: 35,
     scenario: 'You\'re reviewing a quarterly financial report from a potential acquisition target as part of due diligence. The numbers look clean.',
     content: {
+      imageUrl: '/images/challenges/challenge-08-financial-ai.jpg',
       fields: [
         { label: 'Company',  value: 'Apex Manufacturing Holdings Inc.' },
         { label: 'Period',   value: 'Q3 2023 (Jul 1 – Sep 30, 2023)' },
@@ -315,6 +323,7 @@ export const challenges: Challenge[] = [
     expectedDetectionRate: 55,
     scenario: 'New employee onboarding includes a 90-second welcome video from your CEO recorded at headquarters.',
     content: {
+      imageUrl: '/images/challenges/challenge-09-video-real.jpg',
       fields: [
         { label: 'Length',   value: '1 minute 32 seconds' },
         { label: 'Quality',  value: 'HD 1080p — corporate production' },
@@ -354,6 +363,7 @@ export const challenges: Challenge[] = [
     expectedDetectionRate: 30,
     scenario: 'A new contractor submits a scanned driver\'s licence as employment verification. HR flags it for your review before onboarding.',
     content: {
+      imageUrl: '/images/challenges/challenge-10-id-ai.jpg',
       fields: [
         { label: 'State',    value: 'New York — Empire State (front and back scan)' },
         { label: 'Format',   value: 'High-resolution scan, 600 DPI' },

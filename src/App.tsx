@@ -13,7 +13,7 @@ const howItWorks = [
   {
     step: '02',
     title: 'Make Your Call',
-    desc: 'Decide what's real and what's AI-generated. No trick questions — just the evidence in front of you.',
+    desc: "Decide what's real and what's AI-generated. No trick questions — just the evidence in front of you.",
   },
   {
     step: '03',
@@ -31,7 +31,7 @@ const categories = [
   {
     icon: '📄',
     title: 'Document Challenges',
-    intro: 'AI can now generate convincing business documents. Here's what to watch for in your daily paperwork.',
+    intro: "AI can now generate convincing business documents. Here's what to watch for in your daily paperwork.",
     types: ['Invoice verification', 'Contract authenticity', 'Email correspondence', 'Financial statements', 'Legal documents'],
     difficulty: 'Beginner → Expert',
   },
@@ -45,14 +45,14 @@ const categories = [
   {
     icon: '🎙️',
     title: 'Audio Challenges',
-    intro: 'Voice cloning can replicate anyone's speech patterns. Protect yourself from audio fraud.',
+    intro: "Voice cloning can replicate anyone's speech patterns. Protect yourself from audio fraud.",
     types: ['Phone call verification', 'Voicemail authenticity', 'Meeting recordings', 'Interview audio', 'Instruction recordings'],
     difficulty: 'Advanced',
   },
   {
     icon: '🖼️',
     title: 'Image Challenges',
-    intro: 'AI-generated images can create false evidence and misleading visuals. Here's how to verify what you see.',
+    intro: "AI-generated images can create false evidence and misleading visuals. Here's how to verify what you see.",
     types: ['Document photos', 'Product images', 'Profile pictures', 'Event photos', 'Evidence images'],
     difficulty: 'Intermediate',
   },
